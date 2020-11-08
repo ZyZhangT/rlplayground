@@ -1,0 +1,61 @@
+body{
+    background-image:url("C:\Users/zzy99/Downloads/P3.jpg");
+    background-size: 100%;
+    background-repeat:no-repeat;
+}
+
+#leftui{
+    border:1px solid #000000;
+    margin:10px;
+    outline: none;
+    background-color: rgba(255,255,255,0.4);
+    border-radius:10px;
+    box-shadow:3px 3px 12px #1d3e40;
+}
+
+#rightui{
+    border:1px solid #000000;
+    margin:10px;
+    outline: none;
+    background-color: rgba(255,255,255,0.4);
+    border-radius:10px;
+    box-shadow:3px 3px 12px #1d3e40;
+}
+
+#midui{
+    border:1px solid #000000;
+    margin:10px;
+    outline: none;
+    background-color: rgba(255,255,255,0.4);
+    border-radius:10px;
+    box-shadow:3px 3px 12px #1d3e40;
+}
+
+.canv{
+    margin: auto;
+    width: 75%;
+}
+
+.myButton {
+    position:absolute;left:1030px;top:100px;width:100px;height:25px;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
