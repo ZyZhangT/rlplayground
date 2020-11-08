@@ -31,7 +31,7 @@ ctx.fillText('State=1',240,25)
 ctx.fillText('Action=None',240,60)
 ctx.fillText('Reward=None',240,95)
 var img1 = new Image();
-img1.src = "./images/Downloads/WeChat Screenshot_20201019004628.png";
+img1.src = "images/Downloads/WeChat Screenshot_20201019004628.png";
 img1.onload = function() {
     ctx.drawImage(img1, 110, 220, 90, 90);
     ctx.drawImage(img1, 10, 420, 90, 90);
