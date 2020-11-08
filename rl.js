@@ -31,7 +31,7 @@ ctx.fillText('State=1',240,25)
 ctx.fillText('Action=None',240,60)
 ctx.fillText('Reward=None',240,95)
 var img1 = new Image();
-img1.src = "images/Downloads/WeChat Screenshot_20201019004628.png";
+img1.src = "images/WeChat Screenshot_20201019004628.png";
 img1.onload = function() {
     ctx.drawImage(img1, 110, 220, 90, 90);
     ctx.drawImage(img1, 10, 420, 90, 90);
@@ -103,7 +103,7 @@ ctx3.fillText('Reward',80,320)
 ctx3.fillText('Learn',85,450)
 
 var img5 = new Image();
-img5.src = "C:/Users/zzy99/Downloads/arrow.png";
+img5.src = "images/arrow.png";
 img5.onload = function() {
     ctx3.drawImage(img5, 65, 55, 90, 115);
     ctx3.drawImage(img5, 65, 190, 90, 115);
