@@ -336,16 +336,15 @@ function loop() {
 
 var manual_processing = 0
 var auto_processing = 0
-var nextstate = 0;
 async function main_algorithm(){
     console.log('manual_processing',manual_processing)
     if (manual_processing == 0) {
         start = 0
         state = 0;
         last_state = 0;
+        var nextstate = 0;
         action = "None";
         reward = "None";
-        nextstate = 0;
         total_score = 0;
         treasure_exist = 1;
         state_flags = new Array(16).fill(0);
@@ -428,10 +427,9 @@ var f1 = 0
 var f2 = 0
 var trap = 0
 var finish = 0
-
+nextstate = 0
 async function manual() {
     if(f1==0 && manual_flag==1 && start == 1 && auto_processing==0){
-        var nextstate = 0
         state = 0;
         last_state = 0;
         action = "None";
