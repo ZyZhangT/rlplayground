@@ -424,7 +424,7 @@ btn4.onclick=function() {
 
 var btn5 = document.getElementById("btn5")
 btn5.onclick=function() {
-    window.location="C:/Users/zzy99/AppData/Roaming/JetBrains/PyCharm2020.2/scratches/scratch.html"
+    window.location="https://zyzhangt.github.io/rlplayground/2dchallenge"
 }
 
 
