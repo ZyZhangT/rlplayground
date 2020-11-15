@@ -29,7 +29,7 @@ img1.onload = function() {
     ctx.drawImage(img1, 10, 120, 90, 90);
 }
 var img2 = new Image();
-img2.src = "images/Downloads/download.jpg";
+img2.src = "images/download.jpg";
 img2.onload = function() {
     ctx.drawImage(img2, 210, 120, 90, 90);
 }
@@ -73,7 +73,7 @@ for (var i=0;i<6;i++)
 ctx2.closePath();
 
 var img7 = new Image();
-img7.src = "images/Downloads/qm.png";
+img7.src = "images/qm.png";
 img7.onload = function () {
     for (var i = 0; i < 12; i++) {
         ctx2.drawImage(img7, i * 50, 85, 50, 50);
