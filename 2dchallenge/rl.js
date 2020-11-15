@@ -430,7 +430,9 @@ async function main_algorithm(){
             total_score += -1;
         }
         else {
+            if(reward != 'None'){
             total_score += reward;
+            }
         }
         update_qui()
         if (state == 5 || state == 12) {
@@ -532,7 +534,8 @@ async function onestep() {
             } else if (state == 10 && treasure_exist == 0) {
                 total_score += -1;
             } else {
-                total_score += reward;
+               if(reward != 'None'){
+                total_score += reward;}
             }
             update_qui()
             if (state == 5 || state == 12) {
