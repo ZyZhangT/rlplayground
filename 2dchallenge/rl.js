@@ -560,6 +560,7 @@ async function onestep() {
             f2 = 0
             start = 0
             finish = 0
+            btn2.style.display="none"
         }
         else if (button_flag == 0 && start == 1) {
             setTimeout(onestep, 200)
@@ -888,5 +889,5 @@ $(document).ready(async function(){
     window.confirm('Now let us try a more complex challenge. In this part, we would train a robot treasure hunter to explore in a 2-D maze. The robot has to aviod traps,' +
         'find the treasure and escape from the exit. You now have more choices to control the process. You could let the robot train itself an episode, ' +
         'or train the robot manually by giving the robot reward at each step by yourself. Also, you could drag the "explore rate" bar to control whether the robot ' +
-        'is tend to explore more in the environment, or prefer to exploit what it has learned so far. You could always switch to auto training mode by clicking "auto training" ' +
-        'during an episode. Good luck!')})
+        'is tend to explore more in the environment, or prefer to exploit what it has learned so far. During manual training, you could always let the robot do the rest of ' +
+                'training automatically by clicking "auto training". Good luck!')})
