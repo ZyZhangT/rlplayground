@@ -31,23 +31,23 @@ ctx.fillText('State=0',240,25)
 ctx.fillText('Action=None',240,60)
 ctx.fillText('Reward=None',240,95)
 var img1 = new Image();
-img1.src = "C:/Users/zzy99/Downloads/WeChat Screenshot_20201019004628.png";
+img1.src = "../images/WeChat Screenshot_20201019004628.png";
 img1.onload = function() {
     ctx.drawImage(img1, 110, 220, 90, 90);
     ctx.drawImage(img1, 10, 420, 90, 90);
 }
 var img2 = new Image();
-img2.src = "C:/Users/zzy99/Downloads/download.jpg";
+img2.src = "../images/download.jpg";
 img2.onload = function() {
     ctx.drawImage(img2, 10, 120, 90, 90);
 }
 var img3 = new Image();
-img3.src = "C:/Users/zzy99/Downloads/Cartoon-treasure-chest-1-580x386.jpg";
+img3.src = "../images/Cartoon-treasure-chest-1-580x386.jpg";
 img3.onload = function() {
     ctx.drawImage(img3, 210, 320, 90, 90);
 }
 var img4 = new Image();
-img4.src = "C:/Users/zzy99/Downloads/cartoon-image-of-exit-icon-leave-symbol-vector-14700142.jpg";
+img4.src = "../images/cartoon-image-of-exit-icon-leave-symbol-vector-14700142.jpg";
 img4.onload = function() {
     ctx.drawImage(img4, 310, 420, 90, 90);
     for (var i=0;i<16;i++) {
@@ -88,7 +88,7 @@ ctx2.fillText('Past Experience',12,100)
 ctx2.lineWidth = 1
 ctx2.font = "italic 20px futura "
 var img7 = new Image();
-img7.src = "C:/Users/zzy99/Downloads/qm.png";
+img7.src = "../images/qm.png";
 img7.onload = function () {
     for (var k = 0; k < 4; k++) {
         for (var i = 0; i < 4; i++) {
@@ -118,7 +118,7 @@ ctx3.fillText('Choose',40,230);
 ctx3.fillText('Reward',40,250);
 
 var img5 = new Image();
-img5.src = "C:/Users/zzy99/Downloads/arrow.png";
+img5.src = "../images/arrow.png";
 img5.onload = function() {
     ctx3.drawImage(img5, 65, 55, 90, 115);
     ctx3.drawImage(img5, 65, 190, 90, 115);
@@ -126,7 +126,7 @@ img5.onload = function() {
 }
 
 var img6 = new Image();
-img6.src = "C:/Users/zzy99/Downloads/arrow1.png";
+img6.src = "../images/arrow1.png";
 img6.onload = function() {
     ctx3.drawImage(img6, 130, 410, 80, 75);
 }
@@ -713,23 +713,23 @@ ctx.fillText('State=0',240,25)
 ctx.fillText('Action=None',240,60)
 ctx.fillText('Reward=None',240,95)
 var img1 = new Image();
-img1.src = "C:/Users/zzy99/Downloads/WeChat Screenshot_20201019004628.png";
+img1.src = "../images/WeChat Screenshot_20201019004628.png";
 img1.onload = function() {
     ctx.drawImage(img1, 110, 220, 90, 90);
     ctx.drawImage(img1, 10, 420, 90, 90);
 }
 var img2 = new Image();
-img2.src = "C:/Users/zzy99/Downloads/download.jpg";
+img2.src = "../images/Downloads/download.jpg";
 img2.onload = function() {
     ctx.drawImage(img2, 10, 120, 90, 90);
 }
 var img3 = new Image();
-img3.src = "C:/Users/zzy99/Downloads/Cartoon-treasure-chest-1-580x386.jpg";
+img3.src = "../images/Cartoon-treasure-chest-1-580x386.jpg";
 img3.onload = function() {
     ctx.drawImage(img3, 210, 320, 90, 90);
 }
 var img4 = new Image();
-img4.src = "C:/Users/zzy99/Downloads/cartoon-image-of-exit-icon-leave-symbol-vector-14700142.jpg";
+img4.src = "../images/cartoon-image-of-exit-icon-leave-symbol-vector-14700142.jpg";
 img4.onload = function() {
     ctx.drawImage(img4, 310, 420, 90, 90);
     for (var i=0;i<16;i++) {
@@ -771,7 +771,7 @@ ctx2.fillText('Past Experience',12,100)
 ctx2.lineWidth = 1
 ctx2.font = "italic 20px futura "
 var img7 = new Image();
-img7.src = "C:/Users/zzy99/Downloads/qm.png";
+img7.src = "../images/qm.png";
 img7.onload = function () {
     for (var k = 0; k < 4; k++) {
         for (var i = 0; i < 4; i++) {
@@ -801,7 +801,7 @@ ctx3.strokeRect(35,215,60,40)
 ctx3.fillText('Choose',40,230);
 ctx3.fillText('Reward',40,250);
 var img5 = new Image();
-img5.src = "C:/Users/zzy99/Downloads/arrow.png";
+img5.src = "../images/arrow.png";
 img5.onload = function() {
     ctx3.drawImage(img5, 65, 55, 90, 115);
     ctx3.drawImage(img5, 65, 190, 90, 115);
@@ -809,7 +809,7 @@ img5.onload = function() {
 }
 
 var img6 = new Image();
-img6.src = "C:/Users/zzy99/Downloads/arrow1.png";
+img6.src = "../images/arrow1.png";
 img6.onload = function() {
     ctx3.drawImage(img6, 130, 410, 80, 75);
 }
