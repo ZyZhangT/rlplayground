@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>Landing Page &ndash; Layout Examples &ndash; Pure</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AI Playground</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Reinforcement Learning <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<div class="canv">
+    <canvas id="leftui" width="410" height="520">
+    </canvas>
+
+    <canvas id="midui" width="210" height="520">
+    </canvas>
+
+    <canvas id="rightui" width="410" height="520">
+    </canvas>
+
+    <input type="range" id="erate" name="volume" min="0" max="1" step="0.1" style="position:absolute;left:900px;top:100px;width:100px;height:50px">
+    <label for="erate" style="position:absolute;left:900px;top:90px;width:100px;height:20px;">Explore Rate</label>
+
+    <button id="btn1" type="button" class="myButton" style="position:absolute;left:1030px;top:100px;width:100px;height:25px">Auto Training</button>
+    <button id="btn2" type="button" class="myButton" style="position:absolute;left:1140px;top:100px;width:120px;height:25px">Manual Training</button>
+    <button id="btn3" type="button" class="myButton" style="position:absolute;left:1140px;top:130px;width:30px;height:25px">+10</button>
+    <button id="btn4" type="button" class="myButton" style="position:absolute;left:1185px;top:130px;width:30px;height:25px">+5</button>
+    <button id="btn5" type="button" class="myButton" style="position:absolute;left:1230px;top:130px;width:30px;height:25px">+1</button>
+    <button id="btn6" type="button" class="myButton" style="position:absolute;left:1140px;top:160px;width:30px;height:25px">-1</button>
+    <button id="btn7" type="button" class="myButton" style="position:absolute;left:1185px;top:160px;width:30px;height:25px">-5</button>
+    <button id="btn8" type="button" class="myButton" style="position:absolute;left:1230px;top:160px;width:30px;height:25px">-10</button>
+    <script type="text/javascript" src="rl.js"></script>
+</div>
+
+<footer>
+  <p>CEEO</p>
+  <p>Contact information: <a href="mail@xxx.com"></a>.</p>
+</footer>
+</body>
+</html>
