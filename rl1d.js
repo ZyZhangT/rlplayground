@@ -24,17 +24,17 @@ ctx.fillText('Action=None',440,60)
 ctx.fillText('Reward=None',440,95)
 var img1 = new Image();
 //trap
-img1.src = "C:/Users/zzy99/Downloads/WeChat Screenshot_20201019004628.png";
+img1.src = "images/WeChat Screenshot_20201019004628.png";
 img1.onload = function() {
     ctx.drawImage(img1, 10, 120, 90, 90);
 }
 var img2 = new Image();
-img2.src = "C:/Users/zzy99/Downloads/download.jpg";
+img2.src = "images/Downloads/download.jpg";
 img2.onload = function() {
     ctx.drawImage(img2, 210, 120, 90, 90);
 }
 var img3 = new Image();
-img3.src = "C:/Users/zzy99/Downloads/Cartoon-treasure-chest-1-580x386.jpg";
+img3.src = "images/Cartoon-treasure-chest-1-580x386.jpg";
 ctx.font = "20px futura"
 img3.onload = function() {
     ctx.drawImage(img3, 510, 120, 90, 90);
@@ -73,7 +73,7 @@ for (var i=0;i<6;i++)
 ctx2.closePath();
 
 var img7 = new Image();
-img7.src = "C:/Users/zzy99/Downloads/qm.png";
+img7.src = "images/Downloads/qm.png";
 img7.onload = function () {
     for (var i = 0; i < 12; i++) {
         ctx2.drawImage(img7, i * 50, 85, 50, 50);
@@ -327,17 +327,17 @@ ctx.fillText('Action=None',440,60)
 ctx.fillText('Reward=None',440,95)
 var img1 = new Image();
 //trap
-img1.src = "C:/Users/zzy99/Downloads/WeChat Screenshot_20201019004628.png";
+img1.src = "images/WeChat Screenshot_20201019004628.png";
 img1.onload = function() {
     ctx.drawImage(img1, 10, 120, 90, 90);
 }
 var img2 = new Image();
-img2.src = "C:/Users/zzy99/Downloads/download.jpg";
+img2.src = "images/download.jpg";
 img2.onload = function() {
     ctx.drawImage(img2, 210, 120, 90, 90);
 }
 var img3 = new Image();
-img3.src = "C:/Users/zzy99/Downloads/Cartoon-treasure-chest-1-580x386.jpg";
+img3.src = "images/Cartoon-treasure-chest-1-580x386.jpg";
 img3.onload = function() {
     ctx.drawImage(img3, 510, 120, 90, 90);
     for (var i = 0; i < 6; i++) {
@@ -375,7 +375,7 @@ for (var i=0;i<6;i++)
 ctx2.closePath();
 
 var img7 = new Image();
-img7.src = "C:/Users/zzy99/Downloads/qm.png";
+img7.src = "images/qm.png";
 img7.onload = function () {
     for (var i = 0; i < 12; i++) {
         ctx2.drawImage(img7, i * 50, 85, 50, 50);
