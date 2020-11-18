@@ -431,6 +431,6 @@ btn5.onclick=function() {
 $(document).ready(async function(){
     await sleep(100)
     window.confirm('Welcome! In this game you would see how a robot could be trained to find the treasure and avoid trap with reinforcement learning. ' +
-            'Click "Auto training" to start, the robot would explore in the environment and learn from the reward it receives by taking different actions. ' +
+            'Click "Train it!" to start, the robot would explore in the environment and learn from the reward it receives by taking different actions. ' +
             'After each episode finishes (robot successfully finds the treasure), click "Auto training" again to let the robot train itself another episode. ' +
             'Click reset to make the robot forget everthing it learned and restart')})
