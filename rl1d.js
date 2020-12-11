@@ -12,7 +12,7 @@ for (var i=1;i<6;i++)
 }
 
 ctx.lineWidth = 3;
-ctx.setLineDash([])
+ctx.setLineDash([]);
 ctx.strokeRect(5,115,600,100);
 ctx.stroke();
 ctx.closePath();
@@ -73,10 +73,13 @@ for (var i=0;i<6;i++)
 ctx2.closePath();
 
 var img7 = new Image();
-img7.src = "images/qm.png";
-img7.onload = function () {
-    for (var i = 0; i < 12; i++) {
-        ctx2.drawImage(img7, i * 50, 85, 50, 50);
+img7.src = "images/L.png";
+var img8 = new Image();
+img8.src = "images/R.png";
+img8.onload = function () {
+    for (var i = 0; i < 6; i++) {
+        ctx2.drawImage(img7, i * 100+20, 90, 20, 50);
+        ctx2.drawImage(img8, i * 100+70, 90, 20, 50);
     }
 }
 ctx2.font = "italic 18px futura "
@@ -90,7 +93,7 @@ ctx2.font = "italic 18px futura "
 // ctx3.fillText('Action',80,190);
 // ctx3.fillText('Reward',80,320);
 // ctx3.fillText('Learn',85,450);
-
+//
 // var img5 = new Image();
 // img5.src = "C:/Users/zzy99/Downloads/arrow.png";
 // img5.onload = function() {
@@ -278,6 +281,9 @@ async function main_algorithm() {
     console.log('training_episodes', training_episodes);
     auto_processing = 0
     manual_processing = 0
+    alert('Suceessfully trained one episode!')
+    btn1.disabled = false
+    btn2.disabled = false
 }
     // state = 0
     // route = []
@@ -295,6 +301,8 @@ async function main_algorithm() {
 var btn1 = document.getElementById("btn1")
 btn1.onclick=function() {
     start = 1
+    btn1.disabled = true
+    btn2.disabled = true
     window.requestAnimationFrame(main_algorithm)
 }
 
@@ -302,7 +310,7 @@ var btn2 = document.getElementById("btn2")
 btn2.onclick=function() {
 var c=document.getElementById("leftui");
 var ctx=c.getContext("2d");
-    ctx.clearRect(0, 0, 610, 220);
+ctx.clearRect(0, 0, 610, 220);
 for (var i=1;i<6;i++)
 {
     ctx.beginPath();
@@ -348,6 +356,7 @@ img3.onload = function() {
 var c2=document.getElementById("rightui");
 var ctx2=c2.getContext("2d");
 ctx2.clearRect(0, 0, 610, 170);
+ctx2.setLineDash([]);
 for (var i=1;i<6;i++)
 {
     ctx2.beginPath();
@@ -358,6 +367,7 @@ for (var i=1;i<6;i++)
 }
 
 ctx2.lineWidth = 3;
+ctx2.setLineDash([]);
 ctx2.strokeRect(5,65,600,100);
 ctx2.font = "italic 24px futura"
 ctx2.fillText('Past Experience',12,40)
@@ -375,10 +385,13 @@ for (var i=0;i<6;i++)
 ctx2.closePath();
 
 var img7 = new Image();
-img7.src = "images/qm.png";
-img7.onload = function () {
-    for (var i = 0; i < 12; i++) {
-        ctx2.drawImage(img7, i * 50, 85, 50, 50);
+img7.src = "images/L.png";
+var img8 = new Image();
+img8.src = "images/R.png";
+img8.onload = function () {
+    for (var i = 0; i < 6; i++) {
+        ctx2.drawImage(img7, i * 100+20, 90, 20, 50);
+        ctx2.drawImage(img8, i * 100+70, 90, 20, 50);
     }
 }
 ctx2.font = "italic 18px futura "
@@ -419,13 +432,13 @@ btn3.onclick=function() {
 var btn4 = document.getElementById("btn4")
 btn4.onclick=function() {
     confirm('This part shows the learning result of the robot. Each state is divided into left and right halves, ' +
-        'the color of each rectangle shows robot\'s perception on the expected return of taking corresponding action in this state')
+        'the color of each rectangle shows robot\'s perception on the expected return of taking corresponding action in this state.')
 }
 
-var btn5 = document.getElementById("btn5")
-btn5.onclick=function() {
-    window.location="https://zyzhangt.github.io/rlplayground/2dchallenge"
-}
+// var btn5 = document.getElementById("btn5")
+// btn5.onclick=function() {
+//     window.location="https://zyzhangt.github.io/rlplayground/2dchallenge"
+// }
 
 
 $(document).ready(async function(){
