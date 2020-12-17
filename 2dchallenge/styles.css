@@ -1,6 +1,5 @@
 body{
-    background-image:url("images/P3.jpg");
-    background-size: 100%;
+    background-image:url("../images/P3.jpg");
     background-repeat:no-repeat;
 }
 
@@ -58,4 +57,3 @@ body{
 	position:relative;
 	top:1px;
 }
-
