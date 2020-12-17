@@ -1,28 +1,28 @@
 var c=document.getElementById("leftui");
 var ctx=c.getContext("2d");
-for (var i=1;i<4;i++)
-{
-    ctx.beginPath();
-    ctx.lineWidth = 1;
-    ctx.setLineDash([10, 5]);
-    ctx.moveTo(5+100*i, 115);
-    ctx.lineTo(5+100*i, 515);
-    ctx.moveTo(5, 115+100*i);
-    ctx.lineTo(405, 115+100*i);
-    ctx.stroke();
-    ctx.closePath();
-}
+// for (var i=1;i<4;i++)
+// {
+//     ctx.beginPath();
+//     ctx.lineWidth = 1;
+//     ctx.setLineDash([10, 5]);
+//     ctx.moveTo(5+100*i, 115);
+//     ctx.lineTo(5+100*i, 515);
+//     ctx.moveTo(5, 115+100*i);
+//     ctx.lineTo(405, 115+100*i);
+//     ctx.stroke();
+//     ctx.closePath();
+// }
 ctx.beginPath();
-ctx.lineWidth = 3;
-ctx.setLineDash([])
+ctx.lineWidth = 1;
+ctx.setLineDash([10, 5]);
 ctx.strokeRect(5,115,400,400);
-ctx.moveTo(305, 115);
-ctx.lineTo(305, 215);
-ctx.moveTo(105, 215);
-ctx.lineTo(205, 215);
-ctx.moveTo(105, 315);
-ctx.lineTo(205, 315);
-ctx.stroke();
+// ctx.moveTo(305, 115);
+// ctx.lineTo(305, 215);
+// ctx.moveTo(105, 215);
+// ctx.lineTo(205, 215);
+// ctx.moveTo(105, 315);
+// ctx.lineTo(205, 315);
+//ctx.stroke();
 ctx.closePath();
 ctx.font = "20px futura"
 ctx.fillText('Score=0',10,25)
@@ -30,12 +30,13 @@ ctx.fillText('Episodes=1',10,60)
 ctx.fillText('State=0',240,25)
 ctx.fillText('Action=None',240,60)
 ctx.fillText('Reward=None',240,95)
+
 var img1 = new Image();
 img1.src = "../images/WeChat Screenshot_20201019004628.png";
-img1.onload = function() {
-    ctx.drawImage(img1, 110, 220, 90, 90);
-    ctx.drawImage(img1, 10, 420, 90, 90);
-}
+// img1.onload = function() {
+//     ctx.drawImage(img1, 110, 220, 90, 90);
+//     ctx.drawImage(img1, 10, 420, 90, 90);
+// }
 var img2 = new Image();
 img2.src = "../images/download.jpg";
 img2.onload = function() {
@@ -43,19 +44,19 @@ img2.onload = function() {
 }
 var img3 = new Image();
 img3.src = "../images/Cartoon-treasure-chest-1-580x386.jpg";
-img3.onload = function() {
-    ctx.drawImage(img3, 210, 320, 90, 90);
-}
+// img3.onload = function() {
+//     ctx.drawImage(img3, 210, 320, 90, 90);
+// }
 var img4 = new Image();
 img4.src = "../images/cartoon-image-of-exit-icon-leave-symbol-vector-14700142.jpg";
-img4.onload = function() {
-    ctx.drawImage(img4, 310, 420, 90, 90);
-    for (var i=0;i<16;i++) {
-        var a = i % 4;
-        var b = Math.floor(i/4);
-        ctx.fillText(i.toString(),85+100*a,210+100*b)
-    }
-}
+// img4.onload = function() {
+//     ctx.drawImage(img4, 310, 420, 90, 90);
+//     for (var i=0;i<16;i++) {
+//         var a = i % 4;
+//         var b = Math.floor(i/4);
+//         ctx.fillText(i.toString(),85+100*a,210+100*b)
+//     }
+// }
 
 var c2=document.getElementById("rightui");
 var ctx2=c2.getContext("2d");
@@ -88,14 +89,20 @@ ctx2.fillText('Past Experience',12,100)
 ctx2.lineWidth = 1
 ctx2.font = "italic 20px futura "
 var img7 = new Image();
-img7.src = "../images/qm.png";
-img7.onload = function () {
+img7.src = "../images/L.png";
+var img8 = new Image();
+img8.src = "../images/U.png";
+var img9 = new Image();
+img9.src = "../images/R.png";
+var img10 = new Image();
+img10.src = "../images/D.png";
+img10.onload = function () {
     for (var k = 0; k < 4; k++) {
         for (var i = 0; i < 4; i++) {
-            ctx2.drawImage(img7, i * 100, 150+100*k, 40, 40);
-            ctx2.drawImage(img7, 35 + i * 100, 115+100*k, 40, 40);
-            ctx2.drawImage(img7, 65 + i * 100, 150+100*k, 40, 40);
-            ctx2.drawImage(img7, 35 + i * 100, 175+100*k, 40, 40);
+            ctx2.drawImage(img7, i * 100+10, 150+100*k, 22, 22);
+            ctx2.drawImage(img8, 45 + i * 100, 122+100*k, 22, 22);
+            ctx2.drawImage(img9, 75 + i * 100, 150+100*k, 22, 22);
+            ctx2.drawImage(img10, 45 + i * 100, 182+100*k, 22, 22);
         }
     }
     for (var i=0;i<16;i++) {
@@ -151,9 +158,11 @@ btn2.style.display="none"
 
 var a = document.getElementById("erate")
 a.value = 0.3
+var b = document.getElementById("speed")
+b.value = 0.3
 /* algorithm */
 var alpha = 0.7;
-var gamma = 0.6;
+var gamma = 0.9;
 var epsilon = 0.3;
 var m_or_a = 1;
 var action_array = ['left','right','up','down'];
@@ -191,13 +200,26 @@ var speed = 300
 var manual_flag = 0
 var button_flag = 0
 var start = 0
+var trap1flag=0
+var trap2flag=0
+var treasureflag=0
+var exitflag=0
+
 
 async function move_agent(s) {
     ctx.clearRect(10+100*x, 120+100*y, 90, 90);
-    ctx.drawImage(img1, 110, 220, 90, 90);
+    if(trap1flag==1){
+        ctx.drawImage(img1, 110, 220, 90, 90);
+    }
+    if(trap2flag==1){
     ctx.drawImage(img1, 10, 420, 90, 90);
+    }
+    if(treasureflag==1){
     ctx.drawImage(img3, 210, 320, 90, 90);
+    }
+    if(exitflag==1){
     ctx.drawImage(img4, 310, 420, 90, 90);
+    }
     x = s % 4;
     y = Math.floor(s/4);
     ctx.drawImage(img2, 10+100*x, 120+100*y, 90, 90);
@@ -223,26 +245,6 @@ function update_qui(){
     var a = last_state % 4;
     var b = Math.floor(last_state/4);
     var qvalue = q_table[last_state][action_array.indexOf(action)]
-    // if(-1 < qvalue && qvalue< 0){
-    //     ctx2.fillStyle = "#ffcccc";
-    // }
-    // else if(-10 < qvalue && qvalue < -1){
-    //     ctx2.fillStyle = "#ff9999";
-    //     console.log('??')
-    // }
-    // else if(-20 < qvalue && qvalue < -10){
-    //     ctx2.fillStyle = "#ff3333";
-    //     console.log('???')
-    // }
-    // else if(0 < qvalue && qvalue < 5){
-    //     ctx2.fillStyle = "#80ff80";
-    // }
-    // else if(5 < qvalue && qvalue < 25){
-    //     ctx2.fillStyle = "#4dff4d";
-    // }
-    // else if(25 < qvalue && qvalue < 100){
-    //     ctx2.fillStyle = "#00e600";
-    // }
     if(qvalue<0){
         var absq = Math.abs(qvalue)/100
         ctx2.fillStyle = "rgba(255,0,0,"+absq+")"
@@ -418,13 +420,52 @@ async function main_algorithm(){
         // console.log('reward',reward);
         // console.log('nextstate1',nextstate);
         state = nextstate;
-        await sleep(speed);
+        await sleep(b.value*1000);
+        if(reward == -10){
+            if (action == 'left') {
+                ctx.beginPath();
+                ctx.lineWidth = 3;
+                ctx.setLineDash([]);
+                ctx.moveTo(5+100*x, 115+100*y);
+                ctx.lineTo(5+100*x, 215+100*y);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            if (action == 'right') {
+                ctx.beginPath();
+                ctx.lineWidth = 3;
+                ctx.setLineDash([]);
+                ctx.moveTo(105+100*x, 115+100*y);
+                ctx.lineTo(105+100*x, 215+100*y);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            if (action == 'up') {
+                ctx.beginPath();
+                ctx.lineWidth = 3;
+                ctx.setLineDash([]);
+                ctx.moveTo(5+100*x, 115+100*y);
+                ctx.lineTo(105+100*x, 115+100*y);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            if (action == 'down') {
+                ctx.beginPath();
+                ctx.lineWidth = 3;
+                ctx.setLineDash([]);
+                ctx.moveTo(5+100*x, 215+100*y);
+                ctx.lineTo(105+100*x, 215+100*y);
+                ctx.stroke();
+                ctx.closePath();
+            }
+        }
         if(manual_flag ==0){
             move_agent(state);
         }
         if (state == 10 && treasure_exist == 1) {
             treasure_exist = 0;
             total_score += reward;
+            treasureflag=1
         }
         else if (state == 10 && treasure_exist == 0) {
             total_score += -1;
@@ -436,16 +477,41 @@ async function main_algorithm(){
         }
         update_qui()
         if (state == 5 || state == 12) {
+            if (state == 5){
+                trap1flag=1
+            }
+            if (state == 12){
+                trap2flag=1
+                ctx.beginPath();
+                ctx.lineWidth = 3;
+                ctx.setLineDash([]);
+                ctx.moveTo(5, 415);
+                ctx.lineTo(5, 515);
+                ctx.moveTo(5, 515);
+                ctx.lineTo(105, 515);
+                ctx.stroke();
+                ctx.closePath();
+            }
             state = 0;
             reward = 'None';
             action = 'None';
-            await sleep(speed);
+            await sleep(b.value*1000);
             move_agent(state);
         }
     }
     if(manual_flag==0) {
+        exitflag=1
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.setLineDash([]);
+        ctx.moveTo(405, 415);
+        ctx.lineTo(405, 515);
+        ctx.moveTo(305, 515);
+        ctx.lineTo(405, 515);
+        ctx.stroke();
+        ctx.closePath();
         move_agent(state);
-        await sleep(speed);
+        await sleep(b.value*1000);
         training_episodes += 1;
         console.log('training_episodes', training_episodes);
         auto_processing = 0
@@ -723,7 +789,7 @@ img1.onload = function() {
     ctx.drawImage(img1, 10, 420, 90, 90);
 }
 var img2 = new Image();
-img2.src = "../images/Downloads/download.jpg";
+img2.src = "../images/download.jpg";
 img2.onload = function() {
     ctx.drawImage(img2, 10, 120, 90, 90);
 }
@@ -775,14 +841,20 @@ ctx2.fillText('Past Experience',12,100)
 ctx2.lineWidth = 1
 ctx2.font = "italic 20px futura "
 var img7 = new Image();
-img7.src = "../images/qm.png";
-img7.onload = function () {
+img7.src = "../images/L.png";
+var img8 = new Image();
+img8.src = "../images/U.png";
+var img9 = new Image();
+img9.src = "../images/R.png";
+var img10 = new Image();
+img10.src = "../images/D.png";
+img10.onload = function () {
     for (var k = 0; k < 4; k++) {
         for (var i = 0; i < 4; i++) {
-            ctx2.drawImage(img7, i * 100, 150+100*k, 40, 40);
-            ctx2.drawImage(img7, 35 + i * 100, 115+100*k, 40, 40);
-            ctx2.drawImage(img7, 65 + i * 100, 150+100*k, 40, 40);
-            ctx2.drawImage(img7, 35 + i * 100, 175+100*k, 40, 40);
+            ctx2.drawImage(img7, i * 100+10, 150+100*k, 22, 22);
+            ctx2.drawImage(img8, 45 + i * 100, 122+100*k, 22, 22);
+            ctx2.drawImage(img9, 75 + i * 100, 150+100*k, 22, 22);
+            ctx2.drawImage(img10, 45 + i * 100, 182+100*k, 22, 22);
         }
     }
     for (var i=0;i<16;i++) {
@@ -873,7 +945,7 @@ reward = 0;
 x = 0
 y = 0
 last_state = 0
-speed = 300
+speed = b.value*1000
 manual_flag = 0
 button_flag = 0
 start = 0
