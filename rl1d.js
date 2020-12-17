@@ -110,7 +110,7 @@ ctx2.font = "italic 18px futura "
 
 /* algorithm */
 var alpha = 0.7;
-var gamma = 0.6;
+var gamma = 0.9;
 var epsilon = 0.2;
 var m_or_a = 1;
 var action_array = ['left','right'];
@@ -435,10 +435,10 @@ btn4.onclick=function() {
         'the color of each rectangle shows robot\'s perception on the expected return of taking corresponding action in this state.')
 }
 
-// var btn5 = document.getElementById("btn5")
-// btn5.onclick=function() {
-//     window.location="https://zyzhangt.github.io/rlplayground/2dchallenge"
-// }
+var btn5 = document.getElementById("btn5")
+btn5.onclick=function() {
+    window.location="https://zyzhangt.github.io/rlplayground/2dchallenge"
+}
 
 
 $(document).ready(async function(){
