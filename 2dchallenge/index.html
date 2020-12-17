@@ -19,46 +19,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">AI Playground</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Reinforcement Learning <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
 <div style="position:absolute;left:760px;top:72px;">
     <canvas id="rightui" width="410" height="520">
     </canvas>
@@ -75,7 +36,7 @@
 </div>
 
 <div class="canv">
-    <button id="btn1" type="button" class="myButton" style="position:absolute;left:930px;top:100px;width:100px;height:25px">Auto Training</button>
+    <button id="btn1" type="button" class="myButton" style="position:absolute;left:580px;top:560px;width:100px;height:25px">Auto Training</button>
     <button id="btn2" type="button" class="myButton" style="position:absolute;left:570px;top:170px;width:120px;height:25px">move one step</button>
     <button id="btn3" type="button" class="myButton" style="position:absolute;left:650px;top:280px;width:30px;height:25px">+10</button>
     <button id="btn4" type="button" class="myButton" style="position:absolute;left:650px;top:310px;width:30px;height:25px">+5</button>
@@ -89,6 +50,8 @@
 
     <input type="range" id="erate" name="volume" min="0" max="1" step="0.1" style="position:absolute;left:800px;top:100px;width:100px;height:50px">
     <label for="erate" style="position:absolute;left:800px;top:90px;width:100px;height:20px;">Explore Rate</label>
+    <input type="range" id="speed" name="volume" min="0" max="2" step="0.1" style="position:absolute;left:1000px;top:100px;width:100px;height:50px">
+    <label for="speed" style="position:absolute;left:1000px;top:90px;width:150px;height:20px;">Auto Training Speed</label>
 
     <script type="text/javascript" src="rl.js"></script>
 
