@@ -162,7 +162,7 @@ var b = document.getElementById("speed")
 b.value = 0.3
 /* algorithm */
 var alpha = 0.7;
-var gamma = 0.9;
+var gamma = 0.6;
 var epsilon = 0.3;
 var m_or_a = 1;
 var action_array = ['left','right','up','down'];
