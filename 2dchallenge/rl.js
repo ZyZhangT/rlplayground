@@ -662,6 +662,7 @@ btn1.onclick=function() {
 btn10.onclick=function() {
     manual_flag = 1
     start = 1
+    finish = 0
     initialize()
     btn2.style.display="block"
 }
