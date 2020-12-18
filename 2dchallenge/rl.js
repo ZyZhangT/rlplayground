@@ -625,6 +625,13 @@ async function onestep() {
                 finish = 1
                 manual_processing = 0
                 auto_processing = 0
+                btn2.style.display="none"
+                btn3.style.display="none"
+                btn4.style.display="none"
+                btn5.style.display="none"
+                btn6.style.display="none"
+                btn7.style.display="none"
+                btn8.style.display="none"
             }
         }
         else if (state == 15 && start == 1) {
