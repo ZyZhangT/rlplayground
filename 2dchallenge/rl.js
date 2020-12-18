@@ -85,6 +85,10 @@ ctx2.closePath();
 ctx2.lineWidth = 3;
 ctx2.strokeRect(5,115,400,400);
 ctx2.font = "italic 24px futura "
+ctx2.fillText('0',12,60)
+ctx2.fillText('1',130,60)
+ctx2.fillText('0s',205,60)
+ctx2.fillText('2s',335,60)
 ctx2.fillText('Past Experience',12,100)
 ctx2.lineWidth = 1
 ctx2.font = "italic 20px futura "
@@ -517,6 +521,9 @@ async function main_algorithm(){
         auto_processing = 0
         manual_processing = 0
         start = 1
+        btn1.disabled = false
+        btn9.disabled = false
+        btn10.disabled = false
     }
 
     // state = 0
@@ -557,16 +564,16 @@ function initialize() {
 }
 
 async function onestep() {
-    console.log(f2,manual_flag,start,finish)
+    // console.log(f2,manual_flag,start,finish)
     if (f2 == 0 && manual_flag == 1 && start == 1 && finish == 0) {
-        if (trap == 0) {
+
             state_flags[state] = 1;
             choose_action(state);
             nextstate = next_state2(state);
             move_agent(nextstate);
             console.log('s1', nextstate)
             console.log('s2', state)
-        }
+
         manual_processing = 1
         f2 = 1
         trap = 0
@@ -610,10 +617,9 @@ async function onestep() {
                 reward = 'None';
                 action = 'None';
                 move_agent(state);
-                await sleep(500)
-                choose_action(state);
-                nextstate = next_state2(state);
-                move_agent(nextstate);
+                // choose_action(state);
+                // nextstate = next_state2(state);
+                // move_agent(nextstate);
             }
             if (state == 15) {
                 finish = 1
@@ -634,12 +640,22 @@ async function onestep() {
         else if (button_flag == 0 && start == 1) {
             setTimeout(onestep, 200)
         }
-            console.log(f2,manual_flag,start,finish)
+            // console.log(f2,manual_flag,start,finish)
     }
 
 btn1.onclick=function() {
     manual_flag = 0
     start = 1
+    btn1.disabled = true
+    btn9.disabled = true
+    btn10.disabled = true
+    btn2.style.display="none"
+    btn3.style.display="none"
+    btn4.style.display="none"
+    btn5.style.display="none"
+    btn6.style.display="none"
+    btn7.style.display="none"
+    btn8.style.display="none"
     window.requestAnimationFrame(main_algorithm)
 }
 
@@ -655,7 +671,7 @@ btn2.onclick=function() {
     start = 1
     // window.requestAnimationFrame(main_algorithm)
     onestep()
-        btn2.style.display="none"
+    btn2.style.display="none"
     btn3.style.display="block"
     btn4.style.display="block"
     btn5.style.display="block"
@@ -838,6 +854,10 @@ ctx2.lineWidth = 3;
 ctx2.strokeRect(5,115,400,400);
 ctx2.font = "italic 24px futura "
 ctx2.fillText('Past Experience',12,100)
+ctx2.fillText('0',12,60)
+ctx2.fillText('1',130,60)
+ctx2.fillText('0s',205,60)
+ctx2.fillText('2s',335,60)
 ctx2.lineWidth = 1
 ctx2.font = "italic 20px futura "
 var img7 = new Image();
@@ -966,3 +986,8 @@ $(document).ready(async function(){
         'or train the robot manually by giving the robot reward at each step by yourself. Also, you could drag the "explore rate" bar to control whether the robot ' +
         'is tend to explore more in the environment, or prefer to exploit what it has learned so far. During manual training, you could always let the robot do the rest of ' +
                 'training automatically by clicking "auto training". Good luck!')})
+
+var btn11 = document.getElementById("btn11")
+btn11.onclick=function() {
+    window.confirm('Explore rate(0-1): The probability of robot making an exploration(randomly choose next action). Otherwise, the robot would do exploitation (choose the best '+
+            'action of current state based on its past experience.\nAuto Training Speed(0-2): Interval between each auto training step.')}
