@@ -281,7 +281,7 @@ async function main_algorithm() {
     console.log('training_episodes', training_episodes);
     auto_processing = 0
     manual_processing = 0
-    alert('Suceessfully trained one episode!')
+    alert('Successfully trained one episode!')
     btn1.disabled = false
     btn2.disabled = false
 }
