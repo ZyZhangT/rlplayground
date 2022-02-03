@@ -1,1 +1,1 @@
-An online learning platform for middle/hign schoolers to learn about reinforcement learning concepts.
+An online learning platform for middle/high schoolers to learn about reinforcement learning concepts.
